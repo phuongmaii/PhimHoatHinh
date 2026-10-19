@@ -1,0 +1,178 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f2f4f8;
+    color: #333;
+    padding-top: 75px;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 75px;
+    padding: 12px 5%;
+    background-color: #253b67;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 23px;
+    font-weight: bold;
+}
+
+.search {
+    display: flex;
+    gap: 8px;
+}
+
+.search input {
+    width: 230px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.search button {
+    padding: 10px 14px;
+    background-color: #ffca55;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.head-link {
+    background-color: #38588f;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    flex-wrap: wrap;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.head-link a {
+    color: white;
+}
+
+a:hover {
+    color: #ff9800;
+    font-weight: bold;
+}
+
+.content {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 25px 5%;
+}
+
+.left-content {
+    width: 250px;
+    flex-shrink: 0;
+    background-color: white;
+    padding: 18px;
+    border-radius: 10px;
+}
+
+.left-content h3 {
+    margin-top: 0;
+}
+
+.left-content a {
+    display: block;
+    padding: 12px 8px;
+    border-bottom: 1px solid #eee;
+}
+
+.right-content {
+    flex: 1;
+    min-width: 0;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.movie {
+    padding: 15px 0 25px;
+    border-bottom: 1px solid #ddd;
+}
+
+.movie iframe,
+.movie video {
+    display: block;
+    width: 100%;
+    max-width: 800px;
+    aspect-ratio: 16 / 9;
+    border: none;
+    border-radius: 8px;
+}
+
+.movie video {
+    height: auto;
+    background-color: black;
+}
+
+.movie p {
+    line-height: 1.6;
+}
+
+footer {
+    text-align: center;
+    padding: 22px;
+    background-color: #253b67;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    body {
+        padding-top: 115px;
+    }
+
+    .header {
+        flex-direction: column;
+        padding: 12px;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .search {
+        width: 100%;
+    }
+
+    .search input {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .head-link {
+        gap: 18px;
+    }
+
+    .content {
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    .left-content,
+    .right-content {
+        width: 100%;
+    }
+}

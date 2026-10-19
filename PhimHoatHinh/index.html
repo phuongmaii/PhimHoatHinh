@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thế Giới Hoạt Hình</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">🎬 Thế Giới Hoạt Hình</div>
+        <div class="search">
+            <input type="text" id="searchInput" placeholder="Tìm phim hoạt hình...">
+            <button onclick="searchMovies()">Tìm kiếm</button>
+        </div>
+    </header>
+
+    <nav class="head-link">
+        <a href="#">Trang chủ</a>
+        <a href="#movies">Danh sách phim</a>
+        <a href="#popular">Phim nổi bật</a>
+        <a href="#footer">Liên hệ</a>
+    </nav>
+
+    <div class="content" id="movies">
+        <aside class="left-content">
+            <h3>📚 Danh sách phim</h3>
+            <a href="#video1">Doraemon</a>
+            <a href="#video2">Tom và Jerry</a>
+            <a href="#video3">Masha và Gấu</a>
+            <a href="#video4">Hoạt hình vui nhộn</a>
+        </aside>
+
+        <main class="right-content">
+            <h2 id="popular">🌟 Phim hoạt hình dành cho bạn</h2>
+
+            <div class="movie" id="video1">
+                <h3>Doraemon</h3>
+                <div class="video-frame">
+                    <iframe
+                        src="https://www.youtube-nocookie.com/embed/ScMzIvxBSi4"
+                        title="Video minh họa"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <p>Khám phá thế giới hoạt hình cùng những người bạn đáng yêu!</p>
+            </div>
+
+            <div class="movie" id="video2">
+                <h3>Tom và Jerry</h3>
+                <video controls preload="metadata">
+                    <source src="https://www.w3schools.com/html/mov_bbb.mp4"
+                            type="video/mp4">
+                    Trình duyệt của bạn không hỗ trợ video.
+                </video>
+                <p>Những tình huống hài hước khiến bạn bật cười.</p>
+            </div>
+
+            <div class="movie" id="video3">
+                <h3>Masha và Gấu</h3>
+                <p>Một góc nhỏ dành cho những câu chuyện vui nhộn.</p>
+                <div class="video-frame">
+                    <iframe
+                        src="https://www.youtube-nocookie.com/embed/ScMzIvxBSi4"
+                        title="Video hoạt hình minh họa"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+
+            <div class="movie" id="video4">
+                <h3>Hoạt hình vui nhộn</h3>
+                <p>Thư giãn với các video giải trí phù hợp với gia đình.</p>
+            </div>
+        </main>
+    </div>
+
+    <footer id="footer">
+        © 2026 Thế Giới Hoạt Hình | Website học tập HTML & CSS
+    </footer>
+
+    <script>
+        function searchMovies() {
+            const keyword = document.getElementById("searchInput")
+                .value.toLowerCase().trim();
+
+            document.querySelectorAll(".movie").forEach(movie => {
+                movie.style.display =
+                    movie.innerText.toLowerCase().includes(keyword)
+                    ? "block" : "none";
+            });
+        }
+
+        document.getElementById("searchInput").addEventListener("input", searchMovies);
+    </script>
+</body>
+</html>
